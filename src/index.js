@@ -2,10 +2,9 @@
 //if the date is the the current date or in the past
 //true: allow the cocktail to display false: don't allow the cocktail to display
 //open a modal window, display the cocktail, ingredients and recipe
+import VanillaModal from 'vanilla-modal';
 
-const modal = new VanillaModal.default();
-
-console.log('index.js');
+const modal = new VanillaModal();
 
 const app = document.querySelector('.app');
 const cocktailContainer = document.querySelector('.modal-content');

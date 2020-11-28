@@ -1,5 +1,13 @@
 {
+  "scripts": {
+    "build": "webpack"
+  },
   "dependencies": {
     "vanilla-modal": "^1.6.5"
+  },
+  "devDependencies": {
+    "path": "^0.12.7",
+    "webpack": "^5.8.0",
+    "webpack-cli": "^4.2.0"
   }
 }

@@ -60,7 +60,6 @@ const renderCalendar = () => {
 
 const getIngredients = (cocktail) => {
   let ingredients = '';
-  console.log('cocktail', cocktail);
   for (let i=1; i<=15; i++) {
     const ingredient = 'strIngredient' + i;
     const measure = 'strMeasure' + i;
@@ -73,7 +72,6 @@ const getIngredients = (cocktail) => {
 }
 
 const getMethod = (instructions) => {
-  console.log(instructions.split('.'));
   let listItems = '';
   const instructionsArray = instructions.split('.');
   
@@ -85,13 +83,13 @@ const getMethod = (instructions) => {
 };
 
 const getGlass = (glass) => {
-  if (glass.toLowercase() in glassList) {
-    return glassList[glass];
+  const glassFormatted = glass.toLowerCase();
+  if (glassFormatted in glassList) {
+    return glassList[glassFormatted];
   }
 };
 
 const renderCocktail = (cocktail) => {
-  console.log(cocktail);
   const recipe = `
     <div class="img-container">
       <img src="${cocktail.strDrinkThumb}" alt="${cocktail.strDrink}" class="img" />
@@ -134,7 +132,6 @@ const getCocktail = cocktail => {
      }
   })
     .then(data => {
-    console.log('data', data);
     renderCocktail(data.drinks[0]);
   })
     .catch(error => {

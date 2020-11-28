@@ -33,8 +33,21 @@ const cocktailList = [
   '11025',
   '178333',
   '17177',
-  '15941'
+  '15941',
+  '11113'
 ];
+
+const glassList = {
+  "Collins glass": "icon-noun_Zombie-Glass_206095",
+  "Irish coffee cup": "icon-noun_irish-coffee-glass_206077",
+  "Highball glass": "icon-noun_Highball-glass_206075",
+  "Cocktail glass": "icon-noun_Martini-Glass_206072",
+  "Old-fashioned glass": "icon-noun_Old-Fashion-Tumbler_206080",
+  "Wine glass": "icon-noun_white-wine-glass_206096",
+  "Cordial glass": "icon-noun_cordial-glass_206068",
+  "Hurricane glass": "icon-noun_hurricane-glass_206076"
+};
+
 
 // Render the initial state of the calendar
 const renderCalendar = () => {
@@ -56,7 +69,7 @@ const getIngredients = (cocktail) => {
       return ingredients;
     }
     
-    ingredients += `<li><strong>${cocktail[ingredient]}</strong> ${cocktail[measure]}</li>`;
+    ingredients += `<li class="content__list-item"><strong>${cocktail[ingredient]}</strong> ${cocktail[measure]}</li>`;
   }
 }
 
@@ -66,23 +79,39 @@ const getMethod = (instructions) => {
   const instructionsArray = instructions.split('.');
   
   for (let i=0; i < instructionsArray.length - 1; i+=1) {
-    listItems += `<li>${instructionsArray[i]}</li>`;
+    listItems += `<li class="content__list-item">${instructionsArray[i]}</li>`;
   }
   
   return listItems;
 };
 
+const getGlass = (glass) => {
+  if (glass in glassList) {
+    return glassList[glass];
+  }
+};
+
 const renderCocktail = (cocktail) => {
   console.log(cocktail);
   const recipe = `
-    <img src="${cocktail.strDrinkThumb}" alt="${cocktail.strDrink}" />
-    <h2>${cocktail.strDrink}</h2>
-    <h3>Ingredients</h3>
-    <ul>${getIngredients(cocktail)}</ul>
-    <h3>Glass</h3>
-    <p>${cocktail.strGlass}</p>
-    <h3>Method</h3>
-    <ol>${getMethod(cocktail.strInstructions)}</ol>
+    <div class="img-container">
+      <img src="${cocktail.strDrinkThumb}" alt="${cocktail.strDrink}" class="img" />
+    </div>
+    <div class="content">
+      <h2 class="content__heading">${cocktail.strDrink}</h2>
+      <div class="content__2col-layout">
+        <div class="col-1 ingredients">
+          <h3 class="content__subheading">Ingredients</h3>
+          <ul class="content__list">${getIngredients(cocktail)}</ul>
+        </div>
+        <div class="col-2 glass">
+          <h3 class="content__subheading">Glass</h3>
+          <i class="glass__icon ${getGlass(cocktail.strGlass)}" title="${cocktail.strGlass}"></i>
+        </div>
+      </div>
+      <h3 class="content__subheading">Method</h3>
+      <ol class="content__list">${getMethod(cocktail.strInstructions)}</ol>
+    </div>
   `;
   cocktailContainer.innerHTML = recipe;
 }

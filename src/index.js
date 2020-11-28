@@ -38,16 +38,15 @@ const cocktailList = [
 ];
 
 const glassList = {
-  "Collins glass": "icon-noun_Zombie-Glass_206095",
-  "Irish coffee cup": "icon-noun_irish-coffee-glass_206077",
-  "Highball glass": "icon-noun_Highball-glass_206075",
-  "Cocktail glass": "icon-noun_Martini-Glass_206072",
-  "Old-fashioned glass": "icon-noun_Old-Fashion-Tumbler_206080",
-  "Wine glass": "icon-noun_white-wine-glass_206096",
-  "Cordial glass": "icon-noun_cordial-glass_206068",
-  "Hurricane glass": "icon-noun_hurricane-glass_206076"
+  "collins glass": "icon-noun_Zombie-Glass_206095",
+  "irish coffee cup": "icon-noun_irish-coffee-glass_206077",
+  "highball glass": "icon-noun_Highball-glass_206075",
+  "cocktail glass": "icon-noun_Martini-Glass_206072",
+  "old-fashioned glass": "icon-noun_Old-Fashion-Tumbler_206080",
+  "wine glass": "icon-noun_white-wine-glass_206096",
+  "cordial glass": "icon-noun_cordial-glass_206068",
+  "hurricane glass": "icon-noun_hurricane-glass_206076"
 };
-
 
 // Render the initial state of the calendar
 const renderCalendar = () => {
@@ -86,7 +85,7 @@ const getMethod = (instructions) => {
 };
 
 const getGlass = (glass) => {
-  if (glass in glassList) {
+  if (glass.toLowercase() in glassList) {
     return glassList[glass];
   }
 };

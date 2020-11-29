@@ -99,7 +99,7 @@ const renderCocktail = (cocktail) => {
       <div class="content__2col-layout">
         <div class="col-1 ingredients">
           <h3 class="content__subheading">Ingredients</h3>
-          <ul class="content__list">${getIngredients(cocktail)}</ul>
+          <ul class="content__list content__list--none">${getIngredients(cocktail)}</ul>
         </div>
         <div class="col-2 glass">
           <h3 class="content__subheading">Glass</h3>

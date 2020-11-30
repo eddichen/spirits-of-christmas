@@ -2,7 +2,10 @@ import VanillaModal from 'vanilla-modal';
 import Snowflakes from 'magic-snowflakes';
 
 const modal = new VanillaModal();
-const snowflakes = new Snowflakes();
+const snowflakes = new Snowflakes({
+  color: '#fff',
+  maxSize: 50
+});
 
 const app = document.querySelector('.app');
 const cocktailContainer = document.querySelector('.modal-content');

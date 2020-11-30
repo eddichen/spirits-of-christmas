@@ -4,7 +4,7 @@ import Snowflakes from 'magic-snowflakes';
 const modal = new VanillaModal();
 const snowflakes = new Snowflakes({
   color: '#fff',
-  maxSize: 50
+  maxSize: 30
 });
 
 const app = document.querySelector('.app');

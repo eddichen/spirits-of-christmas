@@ -1,10 +1,8 @@
-//user click on a square
-//if the date is the the current date or in the past
-//true: allow the cocktail to display false: don't allow the cocktail to display
-//open a modal window, display the cocktail, ingredients and recipe
 import VanillaModal from 'vanilla-modal';
+import Snowflakes from 'magic-snowflakes';
 
 const modal = new VanillaModal();
+const snowflakes = new Snowflakes();
 
 const app = document.querySelector('.app');
 const cocktailContainer = document.querySelector('.modal-content');
@@ -140,5 +138,6 @@ const getCocktail = cocktail => {
 };
 
 renderCalendar();
+scene.play();
 
 document.addEventListener('click', e => handleClick(e));

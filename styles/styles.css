@@ -7,15 +7,19 @@ body {
   font-size: 1.6rem;
   line-height: 1.25;
   padding: 2.4rem;
-
-  @media screen and (min-width: 48em) {
-    padding: 4.8rem;
-  }
 }
 
 .container {
   max-width: 80em;
   margin: 0 auto;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  font-size: 5rem;
+  font-style: italic;
+  letter-spacing: 1.5px;
 }
 
 /**
@@ -223,7 +227,8 @@ body {
   padding: 2.4rem 2.4rem 10rem;
   text-decoration: none;
   color: #666;
-  font-size: 3.6rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
 }
 
 .grid-item[data-item="5"] {
@@ -347,6 +352,10 @@ body {
 }
 
 @media screen and (min-width: 48em) {
+  body {
+    padding: 4.8rem;
+  }
+
   .app {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(8, 1fr);

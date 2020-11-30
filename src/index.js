@@ -138,6 +138,5 @@ const getCocktail = cocktail => {
 };
 
 renderCalendar();
-scene.play();
 
 document.addEventListener('click', e => handleClick(e));
